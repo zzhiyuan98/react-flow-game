@@ -1,4 +1,4 @@
-import { CloseCircleOutlined } from "@ant-design/icons";
+import { MinusCircleTwoTone } from "@ant-design/icons";
 import React from 'react';
 import { getBezierPath, getEdgeCenter } from 'react-flow-renderer';
 
@@ -12,7 +12,7 @@ const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY, sourcePosition, ta
 
   const pathStyle = {
     fill: "transparent",
-    stroke: "#256eff",
+    stroke: "#91C788",
     strokeWidth: 2,
   };
 
@@ -25,7 +25,7 @@ const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY, sourcePosition, ta
         markerEnd={markerEnd}
       />
       <foreignObject width={iconSize} height={iconSize} x={edgeCenterX - iconSize / 2} y={edgeCenterY - iconSize / 2}>
-        <CloseCircleOutlined style={{ fontSize: `${iconSize}px` }} onClick={() => onEdgeDelete(id)} />
+        <MinusCircleTwoTone twoToneColor="#FF7733" style={{ fontSize: `${iconSize}px` }} onClick={() => onEdgeDelete(id)} />
       </foreignObject>
     </>
   );
