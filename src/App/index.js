@@ -7,7 +7,7 @@ import styles from "./index.module.scss";
 
 const App = () => {
   const [openStartModal, setOpenStartModal] = useState(true);
-  const [watchVisible, setWatchVisible] = useState(true);
+  const [watchVisible, setWatchVisible] = useState(false);
 
   const { seconds, minutes, hours, start, reset } = useStopwatch({ autoStart: true });
 
@@ -24,7 +24,7 @@ const App = () => {
       </div>
     </div>
     <GameCanvas />
-    {openStartModal && <StartModal setOpenStartModal={setOpenStartModal} setWatchVisible={setWatchVisible} start={start} />}
+    {/*{openStartModal && <StartModal setOpenStartModal={setOpenStartModal} setWatchVisible={setWatchVisible} start={start} />}*/}
   </>;
 };
 
