@@ -7,9 +7,10 @@ import styles from "./index.module.scss";
 
 const App = () => {
   const [openStartModal, setOpenStartModal] = useState(true);
-  const [watchVisible, setWatchVisible] = useState(false);
+  const [watchVisible, setWatchVisible] = useState(true);
+  const [score, setScore] = useState(0);
 
-  const { seconds, minutes, hours, start, reset } = useStopwatch({ autoStart: true });
+  const { seconds, minutes, hours, start, pause } = useStopwatch({ autoStart: true });
 
   const renderDigitalNumber = number => number < 10 ? `0${number}` : number;
 
@@ -22,9 +23,13 @@ const App = () => {
         <Switch defaultChecked onChange={setWatchVisible} />
         <span>计时器</span>
       </div>
+      <div className={styles.scoreContainer}>
+        <span>当前得分：</span>
+        <span className={styles.score}>{score}</span>
+      </div>
     </div>
-    <GameCanvas />
-    {/*{openStartModal && <StartModal setOpenStartModal={setOpenStartModal} setWatchVisible={setWatchVisible} start={start} />}*/}
+    <GameCanvas score={score} setScore={setScore} pause={pause} />
+    {openStartModal && <StartModal setOpenStartModal={setOpenStartModal} setWatchVisible={setWatchVisible} start={start} />}
   </>;
 };
 

@@ -13,6 +13,16 @@
   height: 80px;
 }
 
+.scoreContainer {
+  @extend .flexContainer;
+
+  margin-left: 16px;
+}
+
+.score {
+  font-size: 36px;
+}
+
 .stopwatch {
   font-family: "Noto Sans SC", sans-serif;
   font-weight: 600;
@@ -28,5 +38,15 @@
 
   gap: 8px;
   margin-left: 32px;
-  padding-top: 8px;
+}
+
+:global {
+  .ant-switch-checked {
+    background: #91C788 !important;
+  }
+
+  .ant-btn-primary {
+    background: #91C788 !important;
+    border-color: #91C788 !important;
+  }
 }
