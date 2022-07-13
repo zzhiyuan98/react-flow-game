@@ -1,7 +1,7 @@
 {
   "name": "react-flow-game",
   "version": "0.1.0",
-  "homepage": "https://zzhiyuan98.github.io/react-flow-games",
+  "homepage": "https://zzhiyuan98.github.io/react-flow-game",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
