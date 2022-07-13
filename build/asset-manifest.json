@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-flow-game/static/css/main.7db2c151.css",
+    "main.js": "/react-flow-game/static/js/main.3a772d79.js",
+    "index.html": "/react-flow-game/index.html",
+    "main.7db2c151.css.map": "/react-flow-game/static/css/main.7db2c151.css.map",
+    "main.3a772d79.js.map": "/react-flow-game/static/js/main.3a772d79.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7db2c151.css",
+    "static/js/main.3a772d79.js"
+  ]
+}
