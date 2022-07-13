@@ -1,9 +1,9 @@
-export const description = "第一题：请将人物昵称和对应的姓名缩写用连线连起来";
+export const description = "第一题：请将人物的英文名和对应的姓名缩写用连线连起来";
 
-const questionsOne = ["阿兰", "柳宁宁", "豚子", "小妈", "珞珞"];
-const answersOne = ["hyh", "lyx", "zc", "szy", "dsy"];
+const questionsOne = ["Patrick", "Andrew", "Aki", "Allen", "Peter"];
+const answersOne = ["lhz", "cwh", "lyx", "wh", "zq"];
 
-export const solution = ["1", "2", "0", "3", "4"];
+export const solution = ["3", "0", "4", "2", "1"];
 
 const questionNodes = questionsOne.map((e, i) => ({
   id: `question${i}`,
@@ -17,7 +17,7 @@ const answerNodes = answersOne.map((e, i) => ({
   id: `answer${i}`,
   type: "output",
   data: { label: answersOne[i] },
-  position: { x: i * 100, y: 200 },
+  position: { x: i * 100, y: 100 },
   style: { width: 60 },
 }));
 

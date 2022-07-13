@@ -1,5 +1,5 @@
-import { Button } from "antd";
-import React, { useEffect, useState } from "react";
+import { Button, message } from "antd";
+import React, { useState } from "react";
 import ReactFlow, { addEdge, useNodesState, useEdgesState, ReactFlowProvider } from "react-flow-renderer";
 import { initialNodes, descriptions, solutions, problemLength } from "../../problems/initial-nodes";
 import CustomEdge from "./CustomEdge";
@@ -19,7 +19,14 @@ const GameCanvas = ({ score, setScore, pause }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes[0]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
-  const onConnect = params => setEdges(eds => addEdge(params, eds));
+  const onConnect = params => {
+    const { source, target } = params;
+    for (let i = 0; i < edges.length; i++) {
+      if (edges[i].source === source) return message.warning("只能连一条线，你还想连几条？");
+      if (edges[i].target === target) return message.warning("只能连一条线，你还想连几条？");
+    }
+    setEdges(eds => addEdge(params, eds));
+  };
 
   const onEdgeDelete = id => onEdgesChange([{ id, type: "remove" }]);
 
@@ -42,7 +49,9 @@ const GameCanvas = ({ score, setScore, pause }) => {
     return count;
   };
 
-  const updateScore = prevScore => setScore(prevScore + getCorrectAnswers() * 5);
+  const getCurrentScore = count => problemId === 0 ? count * 5 : count * 25;
+
+  const updateScore = prevScore => setScore(prevScore + getCurrentScore(getCorrectAnswers()));
 
   const onNext = () => {
     updateScore(score);
