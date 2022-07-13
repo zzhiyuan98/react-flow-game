@@ -20,7 +20,7 @@ const App = () => {
         {watchVisible && <div className={styles.stopwatch}>{`${renderDigitalNumber(hours)}:${renderDigitalNumber(minutes)}:${renderDigitalNumber(seconds)}`}</div>}
       </div>
       <div className={styles.switchContainer}>
-        <Switch defaultChecked onChange={setWatchVisible} />
+        <Switch checked={watchVisible} onChange={setWatchVisible} />
         <span>计时器</span>
       </div>
       <div className={styles.scoreContainer}>
